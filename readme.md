@@ -2,26 +2,33 @@
 
 ## Descrição
 * Projeto que objetiva criar uma aplicação web capaz de automatizar a prática de "Registro de Pensamentos Automáticos" (RPA), técnica de psicoterapia no tratamento de ansiedaede.
+
 * O projeto também objetiva funcionar como aprendizado pessoal no uso das seguintes tecnologias: React, Vite, Typescript, Tailwind, Node.Js, Express.
+
 * É meu primeiro projeto em React e minha primeira investida em backend.
+
+* Se o projeto der certo, planejo convertê-lo em App mobile no futuro.
 
 ## Tecnologias usadas:
 
 ### npm
-* ferramenta para instalação do Vite e dependências
+
+* Ferramenta para instalação do Vite e dependências
 
 ### Vite
-* tecnologia usada para construção de projetos Front-end;
-* plataforma pela qual instalou-se React, Tailwind e Typescript de forma majoritariamente automática.
+
+* Tecnologia usada para construção de projetos Front-end;
+
+* Plataforma pela qual instalou-se React, Tailwind e Typescript de forma majoritariamente automática.
 
 ### React
-* framework do Javascript para construção de front-end via JSX
+* Framework do Javascript para construção de front-end via JSX
 
 ### Tailwind
-* postprocessor de CSS para estilização via uso de classes
+* Postprocessor de CSS para estilização via uso de classes
 
 ### Typescript
-- tipagem adicional ao JS para maior controle e verificação de erros
+- Tipagem adicional ao JS para maior controle e verificação de erros
 
 ### Enlist
     - 
@@ -45,9 +52,9 @@
 #### Pasta Raíz
 
 ##### package-lock.json
-    * **propósito**: registra a árvore de pacotes e dependências do projeto;
-    * **origem**: instalado e atualizado automaticamente pelo npm durante instalação, remoção ou atualização de pacotes via npm
-    * **manuseio**: geralmente não se mexe aqui.
+* **propósito**: registra a árvore de pacotes e dependências do projeto;
+* **origem**: instalado e atualizado automaticamente pelo npm durante instalação, remoção ou atualização de pacotes via npm
+* **manuseio**: geralmente não se mexe aqui.
 
 ##### package.json
     * **propósito**: principal arquivo de config do npm. Define nome, versão e scripts do projeto, bem como dependencias e ferramentas de desenvolvimento;
