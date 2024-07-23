@@ -2,26 +2,26 @@
 
 ## Descrição
 * Projeto que objetiva criar uma aplicação web capaz de automatizar a prática de "Registro de Pensamentos Automáticos" (RPA), técnica de psicoterapia no tratamento de ansiedaede.
-    - O projeto também objetiva funcionar como aprendizado pessoal no uso das seguintes tecnologias: React, Vite, Typescript, Tailwind, Node.Js, Express.
-    - É meu primeiro projeto em React e minha primeira investida em backend.
+* O projeto também objetiva funcionar como aprendizado pessoal no uso das seguintes tecnologias: React, Vite, Typescript, Tailwind, Node.Js, Express.
+* É meu primeiro projeto em React e minha primeira investida em backend.
 
 ## Tecnologias usadas:
 
 ### npm
-    - ferramenta para instalação do Vite e dependências
+* ferramenta para instalação do Vite e dependências
 
 ### Vite
-    - tecnologia usada para construção de projetos Front-end;
-    - plataforma pela qual instalou-se React, Tailwind e Typescript de forma majoritariamente automática.
+* tecnologia usada para construção de projetos Front-end;
+* plataforma pela qual instalou-se React, Tailwind e Typescript de forma majoritariamente automática.
 
 ### React
-    - framework do Javascript para construção de front-end via JSX
+* framework do Javascript para construção de front-end via JSX
 
 ### Tailwind
-    - postprocessor de CSS para estilização via uso de classes
+* postprocessor de CSS para estilização via uso de classes
 
 ### Typescript
-    - tipagem adicional ao JS para maior controle e verificação de erros
+- tipagem adicional ao JS para maior controle e verificação de erros
 
 ### Enlist
     - 
