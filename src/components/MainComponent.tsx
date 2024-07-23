@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Entry from './Entry';
+import axios from 'axios'; // biblioteca para fazer requisição HTTP
+
 
 const MainComponent: React.FC = () => {
     
@@ -33,8 +35,11 @@ const MainComponent: React.FC = () => {
     }
 
     //agora, é necessário um hanlder para submissão do formulário
-    const receberSubmit = (e: React.FormEvent) => {
+    const receberSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        try {
+            const response = await exios.post()
+        }
         //aqui os dados serão manipulados, por hora vamos apenas loga-los
        console.log(formData) 
     }

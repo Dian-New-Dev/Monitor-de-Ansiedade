@@ -1,5 +1,7 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'; // importa biblioteca de MongoDB chamada Mongoose
 
+
+//EntrySchema define um novo esquema, ou estrutura de documentos
 const EntrySchema = new mongoose.Schema({
   date: { type: Date, required: true },
   time: { type: String, required: true },
@@ -9,6 +11,7 @@ const EntrySchema = new mongoose.Schema({
   anxietyLevel: { type: Number, required: true },
 });
 
+// cria um modelo chamado Entry
 const Entry = mongoose.model('Entry', EntrySchema);
 
 export default Entry;

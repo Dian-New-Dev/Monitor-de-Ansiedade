@@ -62,8 +62,8 @@
 ### MongoDB
 
 ### Git
-    - Versionamento do projeto.
-    - Push ao repositório online.
+* Versionamento do projeto.
+* Push ao repositório online.
 
 
 
@@ -71,9 +71,16 @@
 
 ## Aprendizado Pessoal
 
+### Notas
+* O front-end e o back-end precisam de pastas node_modules e arquivos package-lock.json, package.json e tsconfig.json próprios, por isso estes aparecem duas vezes.
+
+* O mesmo deve ser feito para o eslintrc.cjs:
+    * frontend: react, tailwind, typescript
+    * backend: noje.js e express, typescript
+
 ### Propósito, origem e manuseio de arquivos:
 
-#### Pasta Raíz
+#### Pasta Raíz / Frontend
 
 ##### eslint.cjs
 **propósito**: configura o ESLint;
@@ -81,6 +88,8 @@
 **origem**: instalado automaticamente por algum pacote de dependências via npm;
 
 **manuseio**: não se mexe aqui, o programa funciona automaticamente se integrado com extensão VSCode.
+
+--
 
 ##### package-lock.json
 **propósito**: registra a árvore de pacotes e dependências do projeto;
@@ -166,3 +175,32 @@
 **origem**: criado automaticamentep por instalação do Vite;
 
 **manuseio**: pode-se adicionar plugins adicionais por aqui, manualmente.
+
+#### Pasta Backend
+
+##### Pasta models
+**propósito**: armazena modelos e dados, necessário para um projeto que usa banco de dados.
+
+##### Entry.ts
+**propósito**: lida com o MongoDB e com o banco de dados, ao criar a estrutura de dados via EntrySchema. Faz uso de mongoose
+
+##### Pasta routes
+**propósito**: contém definições de endpoints de API para manipular requisições HTTP.
+
+##### entries.ts
+**propósito**: define rotas para a API do backend, usando Express. É quem permite operações de CRUD.
+
+###### entryRoutes.ts
+**propósito**: cria e armazena novas entradas no banco de dados, bem como a recuperação daquelas ali já armazenadas. Outro arquivo relacionado com CRUD.
+
+##### database.ts
+**propósito**: configura e gerencia conexão com o banco de dados
+
+##### index.ts
+**propósito**: ponto de entrada principal para o backend. É onde o servidor é iniciado.
+
+##### database.ts
+**propósito**: lida com a conexão do aplicativo Node,js e MongoDB
+
+##### index.ts
+**propósito**: configura o servidor e seus middlewares

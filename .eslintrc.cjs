@@ -1,11 +1,10 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true, node: true }, //"node: true" fui eu que coloquei, para indicar ao Eslint que o projeto também roda em Node, não só navagador 
+  env: { browser: true, es2020: true, node: true },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:node/recommended' //adicionado por mim para node.js
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',

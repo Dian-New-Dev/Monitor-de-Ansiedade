@@ -1,9 +1,9 @@
-// "@tailwind" são diretivas que indicam cinjuntos de estilos
-// pré-definidos usados pelo tailwind:
+/* "@tailwind" são diretivas que indicam cinjuntos de estilos
+pré-definidos usados pelo tailwind: */
 
-@tailwind base; //estilos base, padrão
-@tailwind components; //estilos para componentes reutilizáveis como botões
-@tailwind utilities; //utilitários aplicáveis aos elementos html via classname
+@tailwind base; /*estilos base, padrão */
+@tailwind components; /*estilos para componentes reutilizáveis como botões*/
+@tailwind utilities; /*utilitários aplicáveis aos elementos html via classname*/
 
 
 * {
@@ -17,7 +17,7 @@ html, body {
 }
 
 
-// no geral, este arquivo serve para:
-    // 1 - aplicar estilos css globais;
-    // 2 - adcionar estilos tailwindd personalizados;
-    // 3 - importar estilos externos;
+/* no geral, este arquivo serve para:
+    1 - aplicar estilos css globais;
+    2 - adcionar estilos tailwindd personalizados;
+    3 - importar estilos externos;*/
