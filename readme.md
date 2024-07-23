@@ -1,7 +1,7 @@
 # MONITOR DE ANSIEDADE / ANXIETY TRACKER
 
 ## Descrição
-    - Projeto que objetiva criar uma aplicação web capaz de automatizar a prática de "Registro de Pensamentos Automáticos" (RPA), técnica de psicoterapia no tratamento de ansiedaede.
+* Projeto que objetiva criar uma aplicação web capaz de automatizar a prática de "Registro de Pensamentos Automáticos" (RPA), técnica de psicoterapia no tratamento de ansiedaede.
     - O projeto também objetiva funcionar como aprendizado pessoal no uso das seguintes tecnologias: React, Vite, Typescript, Tailwind, Node.Js, Express.
     - É meu primeiro projeto em React e minha primeira investida em backend.
 
