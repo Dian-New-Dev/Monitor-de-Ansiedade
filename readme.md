@@ -52,7 +52,7 @@
 #### Pasta Raíz
 
 ##### package-lock.json
-* **propósito**: registra a árvore de pacotes e dependências do projeto;
+**propósito**: registra a árvore de pacotes e dependências do projeto;
 * **origem**: instalado e atualizado automaticamente pelo npm durante instalação, remoção ou atualização de pacotes via npm
 * **manuseio**: geralmente não se mexe aqui.
 
