@@ -39,13 +39,7 @@ const MainComponent: React.FC = () => {
     const receberSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/entries', {
-                feelings: 'test',
-                thoughts: 'test',
-                situation: 'test',
-                date: '2024-07-24',
-                time: '12:00'
-            });
+            const response = await axios.post('http://localhost:5000/api/entries', formData);
             console.log('Resposta do servidor:', response.data);
         } catch (error) {
             console.error('Erro ao enviar a entrada:', error);
