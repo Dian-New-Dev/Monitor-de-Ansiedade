@@ -1,19 +1,10 @@
-import React, { useState } from 'react';
-import Entry from './Entry';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // biblioteca para fazer requisição HTTP
-
+import Entries from './Entries';
 
 const MainComponent: React.FC = () => {
     
-    //se uma parte da aplicação sofrerá mudanças e precisará ser re-renderizada, esta
-    //parte precisa receber um state. No caso, nosso form mudará pois receberá input
-    //logo, precisa de um state. Eis como iniciá-lo com um destructuring:
-
     const [formData, setFormData] = useState({
-        //form data é variável custom, a segunda adiciona "set" ao nome para indicar
-        //ser a variável com estado alterado (no caso, o form após receber input)
-        //ou seha, formData = form estático(objeto), setFormData = função que atualiza o primeiro, precisa ser definida posteriormente
-
         date: '',
         time: '',
         situation: '',
@@ -22,37 +13,58 @@ const MainComponent: React.FC = () => {
         anxietyLevel: ''
     });
 
-    //com o estado criado, precisa-se manipulá-lo com uma função, um manipulador de eventos:
+    const [entries, setEntries] = useState([]);
 
-    const receberEntradaDoUsuario = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        //isso é uma função com um parâmetro: "e", que representa o evento sendo manipulado
-        //"e" recebe duas tipagens, indicando que o evento pode vir de um input e de um textarea
-        const { name, value } = e.target; //e.target representa o elemento html que disparou o evento, extraindo duas propriedades, name e value
-        setFormData({ //esssa função atualiza o estado de formData
-            ...formData, // "..." é o operador spread, o qual faz uma cópia do formData atual ao invés de modifica-lo
+    // Função para buscar entradas do backend
+    const fetchEntries = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/entries');
+            setEntries(response.data);
+        } catch (error) {
+            console.error('Erro ao buscar entradas:', error);
+        }
+    };
+
+    // Chama fetchEntries quando o componente é montado
+    useEffect(() => {
+        fetchEntries();
+    }, []);
+
+    // Atualiza formData com os valores dos inputs
+    const receberEntradaDoUsuario = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
             [name]: value
-        })
-    }
+        });
+    };
 
-    //agora, é necessário um hanlder para submissão do formulário
-    // aqui também preciaremos fazer requisição http via axios
+    // Envia os dados do formulário e atualiza as entradas
     const receberSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/entries', formData);
-            console.log('Resposta do servidor:', response.data);
+            await axios.post('http://localhost:5000/api/entries', formData);
+            // Após o envio, busca as entradas novamente
+            fetchEntries();
+            setFormData({
+                date: '',
+                time: '',
+                situation: '',
+                feelings: '',
+                thoughts: '',
+                anxietyLevel: ''
+            });
         } catch (error) {
             console.error('Erro ao enviar a entrada:', error);
         }
     };
     
-    
     return (
         <div className='bg-sky-950'>
-            <div className= "p-10 flex flex-col justify-center items-center">
+            <div className="p-10 flex flex-col justify-center items-center">
                 <h2 className='text-blue-50'>NOVA ENTRADA</h2>
                 <form className='flex flex-col items-center w-[80%] max-w-[1000px] border border-opacity-25 border-blue-50 gap-10 p-10 rounded-3xl'>
-                <input 
+                    <input 
                         className='w-full p-5 rounded-3xl' 
                         type="date" 
                         id="date" 
@@ -109,15 +121,13 @@ const MainComponent: React.FC = () => {
                     <button onClick={receberSubmit} className='text-white hover:text-sky-200 w-7/12 bg-sky-800 hover:bg-sky-900 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 border-2 hover:scale-110 border-sky-500 hover:border-sky-700' type="submit">
                         Submeter Entrada
                     </button>
-
                 </form>
             </div>
 
             <div>
-                <Entry />
+                <Entries entries={entries} />
             </div>
         </div>
-        
     );
 };
 
