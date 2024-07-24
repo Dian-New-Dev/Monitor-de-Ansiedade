@@ -1,20 +1,22 @@
 import { Router, Request, Response } from 'express';
-// Router: cria um roteador de middleware e todas
-// request e response: definem tipos para requisições e respostas http
+import Entry from '../models/Entry';
 
 const router = Router();
 
-// Rota para clientes poderem criar uma nova entrada
-router.post('/entries', (req: Request, res: Response) => {
-    const newEntry = req.body;
-    // Aqui você pode adicionar lógica para salvar a entrada no banco de dados
-    res.status(201).json(newEntry);
-});
-
-// Rota para clientes poderem obter todas as entradas
-router.get('/entries', (req: Request, res: Response) => {
-    // Aqui você pode adicionar lógica para obter entradas do banco de dados
-    res.status(200).json([]);
+router.post('/entries', async (req: Request, res: Response) => {
+    console.log('Recebendo dados:', req.body);
+    try {
+        const entry = new Entry(req.body);
+        await entry.save();
+        res.status(201).json(entry);
+    } catch (error) {
+        console.error('Erro ao salvar entrada:', error);
+        if (error instanceof Error) {
+            res.status(400).json({ error: error.message });
+        } else {
+            res.status(400).json({ error: 'Unknown error' });
+        }
+    }
 });
 
 export default router;

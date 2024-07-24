@@ -35,14 +35,23 @@ const MainComponent: React.FC = () => {
     }
 
     //agora, é necessário um hanlder para submissão do formulário
+    // aqui também preciaremos fazer requisição http via axios
     const receberSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await exios.post()
+            const response = await axios.post('http://localhost:5000/api/entries', {
+                feelings: 'test',
+                thoughts: 'test',
+                situation: 'test',
+                date: '2024-07-24',
+                time: '12:00'
+            });
+            console.log('Resposta do servidor:', response.data);
+        } catch (error) {
+            console.error('Erro ao enviar a entrada:', error);
         }
-        //aqui os dados serão manipulados, por hora vamos apenas loga-los
-       console.log(formData) 
-    }
+    };
+    
     
     return (
         <div className='bg-sky-950'>

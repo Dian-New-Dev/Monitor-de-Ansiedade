@@ -1,17 +1,13 @@
-import mongoose from 'mongoose'; // importa biblioteca de MongoDB chamada Mongoose
+import mongoose from 'mongoose';
 
-
-//EntrySchema define um novo esquema, ou estrutura de documentos
-const EntrySchema = new mongoose.Schema({
-  date: { type: Date, required: true },
-  time: { type: String, required: true },
-  situation: { type: String, required: true },
-  feelings: { type: String, required: true },
-  thoughts: { type: String, required: true },
-  anxietyLevel: { type: Number, required: true },
+const entrySchema = new mongoose.Schema({
+    feelings: { type: String, required: true },
+    thoughts: { type: String, required: true },
+    situation: { type: String, required: true },
+    date: { type: String, required: true },
+    time: { type: String, required: true }
 });
 
-// cria um modelo chamado Entry
-const Entry = mongoose.model('Entry', EntrySchema);
+const Entry = mongoose.model('Entry', entrySchema);
 
 export default Entry;

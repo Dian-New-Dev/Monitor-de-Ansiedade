@@ -59,7 +59,14 @@
 
 ### Express
 
+### Axios
+* Usado para fazer requisição HTTP
+
 ### MongoDB
+* Banco de dados
+
+### MongoDB Compass
+* Interface gráfica para uso do MongoDB.
 
 ### Git
 * Versionamento do projeto.
@@ -77,6 +84,9 @@
 * O mesmo deve ser feito para o eslintrc.cjs:
     * frontend: react, tailwind, typescript
     * backend: noje.js e express, typescript
+
+* O processo de debugging travou por horas pois não estava conseguindo fazer submissões do formulário chegarem no MondoBD Compass. Depois de muito tempo, descobri que precisava criar um arquivo chamado .env na pasta raiz, onde especifica-se a url de conexão com o MongoDB
+
 
 ### Propósito, origem e manuseio de arquivos:
 
@@ -204,3 +214,50 @@
 
 ##### index.ts
 **propósito**: configura o servidor e seus middlewares
+
+## Atual estrutura de pastas
+
+```markdown
+
+anxiety-tracker
+    backend
+        node_modules
+            (97 itens aqui)
+        src
+            models
+                Entry.ts
+            routes
+                entries.ts
+                entryRoutes.ts
+            database.ts
+            index.ts
+        .eslintrc.cjs
+        pacjage.json
+        package-lock.jjson
+        tsconfig.json
+    node_modules
+        (221 itens aqui)
+    src
+        components
+            Entry.tsx
+            FooterComponent.tsx
+            HeaderComponent.tsx
+            MainComponent.tsx
+        App.tsx
+        index.tsx
+        main.tsx
+        vite-env.d.ts
+    .env
+    .eslintrc.cjs
+    .gitignore
+    index.html
+    package.json
+    package-lock.json
+    postcss.config.js
+    readme.md
+    tailwind.config.js
+    tsconfig.app.json
+    tsconfig.node.json
+    vite.config.ts
+
+```

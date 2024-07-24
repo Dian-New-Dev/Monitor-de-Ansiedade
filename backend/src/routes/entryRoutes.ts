@@ -10,7 +10,11 @@ router.post('/entries', async (req, res) => {
     await newEntry.save();
     res.status(201).json(newEntry);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    if (error instanceof Error) {
+      res.status(400).json({ error: error.message });
+    } else {
+      res.status(400).json({ error: 'Unknown error' });
+    }
   }
 });
 
@@ -20,7 +24,11 @@ router.get('/entries', async (req, res) => {
     const entries = await Entry.find();
     res.status(200).json(entries);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    if (error instanceof Error) {
+      res.status(400).json({ error: error.message });
+    } else {
+      res.status(400).json({ error: 'Unknown error' });
+    }
   }
 });
 
