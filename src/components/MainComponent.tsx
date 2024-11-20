@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // biblioteca para fazer requisição HTTP
-import Entries from './Entries';
+import ListaDeEntradas from './Entries';
 
 const MainComponent: React.FC = () => {
     
@@ -125,7 +125,8 @@ const MainComponent: React.FC = () => {
             </div>
 
             <div>
-                <Entries entries={entries} />
+                
+                <ListaDeEntradas entradas={entries} />
             </div>
         </div>
     );
